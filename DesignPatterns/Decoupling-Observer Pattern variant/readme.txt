@@ -45,6 +45,7 @@ type TForm1
 
 implemenation
 
+// Simple TForm1.Log which streams messages to a UI element ( Memo1_Debugger )
 procedure Log(const Msg: STring);
 begin
  Memo1_Debugger.Lines.Add(FormatDateTime('hh:nn:ss', Now) + '-' + Msg);

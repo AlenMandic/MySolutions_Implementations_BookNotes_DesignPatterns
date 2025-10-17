@@ -39,12 +39,21 @@ unit Unit1;
 
 interface
 
+Memo1_Debugger: TMemo;
+
 uses
 Example // ( Unit2 )
 
 type
  TForm1 = class(TForm)
     procedure Log(const Msg: String);
+
+procedure Log( const Msg: String);
+begin
+
+Memo1_Debugger.Lines.Add(msg);
+
+end;
 
 // Inside FormCreate
 Unit2.SetLogHandler(Log);
