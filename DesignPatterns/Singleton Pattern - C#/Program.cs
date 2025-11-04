@@ -1,27 +1,6 @@
-﻿using SimpleAsyncTaskExample;
-using SimpleAsyncTaskExample.AbstractClasses_Interfaces;
-using SimpleAsyncTaskExample.TestingFolder1;
-
+﻿
 class Program
 {    
-    public static async Task<int> GetWebPageLengthAsync(string endpoint)
-    {
-        var client = new HttpClient();
-        var uri = new Uri(endpoint);
-
-        byte[] WebPageContent = await client.GetByteArrayAsync(uri);
-        return WebPageContent.Length;
-
-    }
-
-    public static async Task OutputWebPageLengthAsync()
-    {
-
-        int getWebsiteBytes = await GetWebPageLengthAsync("https://github.com/alenmandic");
-
-        Console.WriteLine("Length of my personal Github in bytes: " + getWebsiteBytes.ToString());
-
-    }
 
         static void Main(string[] args)
     {
