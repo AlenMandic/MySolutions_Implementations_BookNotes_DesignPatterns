@@ -1,0 +1,75 @@
+current page: 77
+INTRODUCTION
+
+Aside from learning Syntax and C# Semantics; understanding the use of numerous .NET development frameworks.
+- Such as database access using ADO.NET and Entity Framework (EF) Core, user interfaces with Windows Presentation Foundation (WPF) and REST-ful services and Web Applications with ASP.NET Core.
+
+
+***CHAPTER 1***
+
+High-level discussion of a number of .NET related topics such as assemblies, the Common Intermediate Language ( CIL ), and JIT compilation. We will also understand the relationship between the .NET runtime, the Common Type System (CTS) and the Common Language Specification ( CLS ).
+
+From a programmer's perspective, .NET is a runtime enviroment and a comprehensive base class library.
+
+- Compiling C# code produces a *.dll Assembly file which contains a manifest, CIL instructions ( Common Intermediate Language by Microsoft, platform-agnostic ), and metadata describing all of our classes aspects. The C# compiler emits CIL, not platform-specific instructions.
+- C# can only be used to build software that is hosted under the .NET runtime. ( can't use C# to build a native com server or an unmanaged c++ style app ). The term used to describe the code targeting the .NET runetime is "Managed code". The binary unit that contains the managed code is called an "Assembly".
+
+- .NET Framework files can compile either to a *.dll or *.exe, while .NET only to *.dll.
+
+- CIL platform agnostic instructions get compiled into machine code via a JIT ( just-in-time ) compiler, or "jitter". When Jitter compiles CIL for the first time, it caches the results of the compilaton into memory, so the second time you run some compiled method or code, there is no need for re-compilation.
+
+- .NET assembly files contain full and accurate metada describing every type and members of our code. Visual Studio's editor intellisense is enabled by reading metadata at design-time.
+
+Understanding the Common Type System: 
+In the world of  .NET, type is simply a general term used to refer to a member from the set {class, interface, structure, enumeration, delegate}.
+
+Every .NET language supports atleast the notion of a "class" type, which can be composed of any number of members ( constructors, properties, methods, and events ).
+
+C# Structure types ( structs ):
+A lightweight class-type:
+
+struct Point
+{
+
+//structs can contain fields:
+public int xPos, yPos;
+
+//structs can contain parametirized constructors:
+public Point(int x, int y)
+{ xPos = x;
+ yPos = y;
+}
+
+// structs can have methods:
+public void PrintPosition()
+{
+Console.WriteLine("({0}, {1})", xPos, yPos);
+ }
+}
+
+C# Enumerations: Allows us to group name-value pairs.
+enum SomeEnum 
+{
+Wizard = 100,
+Fighter = 200
+} // Enums are by default stored in 32 bit integeres, but this can be lowered for lower-memory devices
+
+CTS Delegate Types: .NET equivalent of type-safe C style function pointers.
+// this C# delegate can point to any method, returning an int and taking two ints as input
+delegate int BinaryOp(int x, int y);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
